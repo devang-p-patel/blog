@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Welcome to</p>
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+    <div class="hero-ornament">
+      <span></span><span class="diamond">◆</span><span></span>
+    </div>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Writing</h2>
+    </div>
+
+    {% assign posts = site.posts %}
+    {% if posts.size > 0 %}
+      {% assign featured = posts.first %}
+      <div class="featured-post">
+        <a class="featured-post-link" href="{{ featured.url | relative_url }}">
+          <div class="featured-post-meta">
+            {% if featured.categories.first %}
+              <span class="category-tag">{{ featured.categories.first | capitalize }}</span>
+            {% endif %}
+            <span class="featured-label">Featured</span>
+          </div>
+          <h2 class="featured-post-title">{{ featured.title }}</h2>
+          <p class="featured-post-excerpt">{{ featured.excerpt | strip_html | truncate: 200 }}</p>
+          <div class="post-footer-meta">
+            <time class="post-date" datetime="{{ featured.date | date_to_xmlschema }}">
+              {{ featured.date | date: "%B %-d, %Y" }}
+            </time>
+            <span class="meta-sep">·</span>
+            <span class="reading-time">
+              {% assign words = featured.content | number_of_words %}
+              {% assign minutes = words | divided_by: 200 %}
+              {% if minutes < 1 %}1{% else %}{{ minutes }}{% endif %} min read
+            </span>
+            <span class="read-more-inline">Read essay →</span>
+          </div>
+        </a>
+      </div>
+
+      {% if posts.size > 1 %}
+        <div class="posts-grid">
+          {% for post in posts offset:1 limit:6 %}
+            <article class="post-card">
+              <a class="post-card-link" href="{{ post.url | relative_url }}">
+                <div class="post-card-inner">
+                  {% if post.categories.first %}
+                    <span class="category-tag">{{ post.categories.first | capitalize }}</span>
+                  {% endif %}
+                  <h3 class="post-card-title">{{ post.title }}</h3>
+                  <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 130 }}</p>
+                  <div class="post-card-meta">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                      {{ post.date | date: "%b %-d, %Y" }}
+                    </time>
+                    <span class="meta-sep">·</span>
+                    <span class="reading-time">
+                      {% assign words = post.content | number_of_words %}
+                      {% assign minutes = words | divided_by: 200 %}
+                      {% if minutes < 1 %}1{% else %}{{ minutes }}{% endif %} min
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    {% else %}
+      <p class="no-posts">No posts yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>

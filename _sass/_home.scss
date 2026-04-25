@@ -1,0 +1,291 @@
+// Hero
+.hero {
+  padding: 7rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 4rem;
+    background: $color-border;
+  }
+
+  @media (max-width: $bp-md) {
+    padding: 5rem 0 3.5rem;
+  }
+}
+
+.hero-inner {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: $font-heading;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: $color-text-muted;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: $color-border;
+
+  span {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: $color-border;
+  }
+
+  .diamond {
+    font-size: 0.5rem;
+    width: auto;
+    height: auto;
+    background: none;
+    color: $color-accent;
+    letter-spacing: 0;
+  }
+}
+
+// Posts Section
+.posts-section {
+  padding: 4rem 0 7rem;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid $color-border;
+}
+
+// Featured Post
+.featured-post {
+  margin-bottom: 4rem;
+
+  &-link {
+    display: block;
+    padding: 2.75rem 3rem;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    transition: box-shadow $transition-base, transform $transition-base;
+
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: $bp-sm) {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &-title {
+    font-family: $font-heading;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin-bottom: 1rem;
+    transition: color $transition-fast;
+
+    .featured-post-link:hover & {
+      color: $color-accent;
+    }
+  }
+
+  &-excerpt {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: $color-text-muted;
+    margin-bottom: 1.5rem;
+    max-width: 680px;
+  }
+}
+
+.featured-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-white;
+  background: $color-text;
+  padding: 0.25em 0.625em;
+  border-radius: 2px;
+}
+
+.category-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-accent;
+  border: 1px solid rgba($color-accent, 0.3);
+  padding: 0.25em 0.625em;
+  border-radius: 2px;
+  transition: all $transition-fast;
+
+  a:hover & {
+    background: $color-accent;
+    color: $color-white;
+    border-color: $color-accent;
+  }
+}
+
+// Post Grid
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: $color-border;
+  border: 1.5px solid $color-border;
+  border-radius: 4px;
+  overflow: hidden;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-card {
+  background: $color-bg;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-white;
+  }
+
+  &-link {
+    display: block;
+    height: 100%;
+  }
+
+  &-inner {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &-title {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: $color-text;
+    transition: color $transition-fast;
+    flex: 1;
+
+    .post-card:hover & {
+      color: $color-accent;
+    }
+  }
+
+  &-excerpt {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: $color-text-muted;
+  }
+
+  &-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: $color-text-light;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+}
+
+// Shared meta
+.post-footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  flex-wrap: wrap;
+}
+
+.meta-sep {
+  color: $color-border;
+}
+
+.read-more-inline {
+  margin-left: auto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-accent;
+  transition: color $transition-fast;
+
+  .featured-post-link:hover & {
+    color: $color-accent-hover;
+  }
+
+  @media (max-width: $bp-sm) {
+    margin-left: 0;
+  }
+}
+
+.no-posts {
+  text-align: center;
+  color: $color-text-muted;
+  padding: 4rem 0;
+  font-style: italic;
+}
