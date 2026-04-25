@@ -1,0 +1,35 @@
+// Typography
+$font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+// Colors
+$color-bg:           #fafaf8;
+$color-bg-alt:       #f3f3ef;
+$color-bg-dark:      #111111;
+$color-text:         #1f1f1f;
+$color-text-muted:   #787870;
+$color-text-light:   #a8a89e;
+$color-accent:       #b8956a;
+$color-accent-hover: #9a7a54;
+$color-border:       #e4e4dc;
+$color-border-dark:  #2a2a2a;
+$color-white:        #ffffff;
+
+// Spacing
+$nav-height: 68px;
+
+// Layout
+$max-width:      1180px;
+$content-width:  720px;
+
+// Transitions
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: 0.15s $ease;
+$transition-base: 0.25s $ease;
+
+// Breakpoints
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;

@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<div class="reading-progress-bar" id="progressBar"></div>
+
+<article class="post">
+  <div class="post-header">
+    <div class="container container--narrow">
+      {% if page.categories.first %}
+        <a class="post-category" href="/category/{{ page.categories.first | slugify }}">
+          {{ page.categories.first | capitalize }}
+        </a>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+        <span class="meta-sep">·</span>
+        <span class="reading-time">
+          {% assign words = page.content | number_of_words %}
+          {% assign minutes = words | divided_by: 200 %}
+          {% if minutes < 1 %}1{% else %}{{ minutes }}{% endif %} min read
+        </span>
+        {% if page.author %}
+          <span class="meta-sep">·</span>
+          <span class="post-author">{{ page.author }}</span>
+        {% elsif site.author %}
+          <span class="meta-sep">·</span>
+          <span class="post-author">{{ site.author }}</span>
+        {% endif %}
+      </div>
+      <div class="post-header-ornament"></div>
+    </div>
+  </div>
+
+  <div class="post-body">
+    <div class="container container--narrow">
+      {{ content }}
+    </div>
+  </div>
+
+  <footer class="post-footer">
+    <div class="container container--narrow">
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="post-nav">
+        {% if page.previous.url %}
+          <a class="post-nav-link post-nav-link--prev" href="{{ page.previous.url | relative_url }}">
+            <span class="nav-label">← Previous</span>
+            <span class="nav-title">{{ page.previous.title }}</span>
+          </a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="post-nav-link post-nav-link--next" href="{{ page.next.url | relative_url }}">
+            <span class="nav-label">Next →</span>
+            <span class="nav-title">{{ page.next.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+      <a class="back-to-home" href="{{ '/' | relative_url }}">← All posts</a>
+    </div>
+  </footer>
+</article>
+
+<script>
+  const bar = document.getElementById('progressBar');
+  const post = document.querySelector('.post-body');
+  function updateProgress() {
+    const rect = post.getBoundingClientRect();
+    const total = post.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, (scrolled / (total - window.innerHeight)) * 100);
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+</script>

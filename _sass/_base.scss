@@ -1,0 +1,46 @@
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  &--narrow {
+    max-width: $content-width;
+  }
+
+  @media (max-width: $bp-sm) {
+    padding: 0 1.25rem;
+  }
+}
+
+// Reading progress bar
+.reading-progress-bar {
+  position: fixed;
+  top: $nav-height;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: $color-accent;
+  z-index: 200;
+  transition: width 0.1s linear;
+}
+
+// Utility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

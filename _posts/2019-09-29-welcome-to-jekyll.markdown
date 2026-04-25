@@ -1,25 +1,36 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2019-09-29 18:45:36 +0000
-categories: jekyll update
+title: "Hello, World"
+date: 2019-09-29 18:45:36 +0000
+categories: ideas
+tags: [writing, beginnings]
+excerpt: "Every worthwhile thing starts somewhere. This is where this starts."
 ---
-These are all posts in `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Every worthwhile thing starts somewhere.
 
-Jekyll also offers powerful support for code snippets:
+Sometimes it starts with a clear vision — a precise idea of what you want to make and why. More often it starts with a vague feeling that you have something to say, and that saying it somewhere specific will make it more real.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+This is that somewhere.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+## Why a blog in the age of social media
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+I've thought about this more than I probably should. We have platforms now — places where writing reaches people immediately, gets engaged with, gets shared. A personal blog, by comparison, is quiet. No algorithm is pushing it. No one gets a notification when I publish.
+
+And yet.
+
+There's something about a dedicated space that changes how I write. On social media, I'm performing. On a blog, I'm thinking. The format shapes the thought: constrained platforms produce constrained thoughts.
+
+I want to write at the pace ideas deserve. Some things need 1,500 words. Some need three sentences. Having a space where both are equally acceptable changes what I'm willing to explore.
+
+## What this will be
+
+I genuinely don't know yet, and I'm okay with that.
+
+I plan to write about technology — not the industry gossip kind, but the "what does this mean for how we live" kind. About design. About ideas that refuse to stay neatly inside a single category.
+
+Mostly I plan to write about things I'm thinking about and struggling to understand. Writing is the tool I use to think clearly, and this is where I'll use it.
+
+---
+
+If you're reading this: thanks for being here. I hope something here is worth your time.
